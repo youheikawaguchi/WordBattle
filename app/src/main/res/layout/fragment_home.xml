@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <Button
+        android:id="@+id/onlineBattleStartButton"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="32dp"
+        android:elevation="2dp"
+        android:text="@string/online_battle_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/friendBattleStartButton"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:elevation="2dp"
+        android:text="@string/friend_battle_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/onlineBattleStartButton" />
+
+    <Button
+        android:id="@+id/soloBattleStartButton"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:elevation="2dp"
+        android:text="@string/solo_battle_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friendBattleStartButton" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soloBattleStartButton">
+
+        <Button
+            android:id="@+id/rankingViewButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:text="ランキング" />
+
+        <Button
+            android:id="@+id/mypageViewButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:text="マイページ" />
+
+        <Button
+            android:id="@+id/settingsViewButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:text="設定" />
+
+        <Button
+            android:id="@+id/helpViewButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:text="ヘルプ" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

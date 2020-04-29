@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WORD BATTLE</string>
+    <string name="online_battle_title">オンラインバトル</string>
+    <string name="friend_battle_title">フレンドバトル</string>
+    <string name="solo_battle_title">一人でバトル</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="answerEditTextHint">例：ワードバトル</string>
+</resources>

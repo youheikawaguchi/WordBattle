@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_home">
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="sample.android.example.wordbattle.presenters.fragments.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_fragment_home_to_solo_game"
+            app:destination="@id/fragment_solo_game" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_solo_game"
+        android:name="sample.android.example.wordbattle.presenters.fragments.FragmentSoloGame"
+        android:label="fragment_solo_game"
+        tools:layout="@layout/fragment_solo_game" >
+        <action
+            android:id="@+id/action_fragment_solo_game_to_fragmentGameResult"
+            app:destination="@id/fragmentGameResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGameResult"
+        android:name="sample.android.example.wordbattle.presenters.fragments.FragmentGameResult"
+        android:label="fragment_game_result"
+        tools:layout="@layout/fragment_game_result">
+        <argument
+            android:name="questionThemeValue"
+            app:argType="string" />
+        <argument
+            android:name="answerValue"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentGameResult_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+
+</navigation>
