@@ -6,7 +6,7 @@
     app:startDestination="@id/fragment_home">
     <fragment
         android:id="@+id/fragment_home"
-        android:name="sample.android.example.wordbattle.presenters.fragments.FragmentHome"
+        android:name="sample.android.example.wordbattle.view.fragments.FragmentHome"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_solo_game"
-        android:name="sample.android.example.wordbattle.presenters.fragments.FragmentSoloGame"
+        android:name="sample.android.example.wordbattle.view.fragments.FragmentSoloGame"
         android:label="fragment_solo_game"
         tools:layout="@layout/fragment_solo_game" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentGameResult"
-        android:name="sample.android.example.wordbattle.presenters.fragments.FragmentGameResult"
+        android:name="sample.android.example.wordbattle.view.fragments.FragmentGameResult"
         android:label="fragment_game_result"
         tools:layout="@layout/fragment_game_result">
         <argument

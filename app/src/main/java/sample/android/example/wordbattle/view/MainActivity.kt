@@ -1,4 +1,4 @@
-package sample.android.example.wordbattle.presenters.activities
+package sample.android.example.wordbattle.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

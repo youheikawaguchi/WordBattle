@@ -1,4 +1,4 @@
-package sample.android.example.wordbattle.presenters.fragments
+package sample.android.example.wordbattle.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

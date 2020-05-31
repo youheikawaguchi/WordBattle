@@ -1,70 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="trendViewModel"
+            type="sample.android.example.wordbattle.data.viewmodel.TrendViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/answerEditText"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="64dp"
-        android:ems="10"
-        android:focusable="true"
-        android:hint="@string/answerEditTextHint"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:selectAllOnFocus="true"
-        android:singleLine="false"
-        android:background="#00000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/themeText"
-        tools:text="メンヘラ">
+        <EditText
+            android:id="@+id/answerEditText"
+            style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="@string/answerEditTextHint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="true"
+            android:singleLine="false"
+            android:background="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/themeText"
+            tools:text="メンヘラ">
 
-        <requestFocus />
-    </EditText>
+            <requestFocus />
+        </EditText>
 
-    <TextView
-        android:id="@+id/themeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024"
-        tools:text="お題：あいみょん" />
+        <TextView
+            android:id="@+id/themeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.100000024"
+            tools:text="@{trendViewModel.trendKeyword}" />
 
-    <TextView
-        android:id="@+id/countDownTimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="10" />
+        <TextView
+            android:id="@+id/countDownTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
 
-    <Button
-        android:id="@+id/soloGameSubmit"
-        android:layout_width="40dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:drawable/ic_menu_send"
-        android:backgroundTint="#048AF4"
-        app:layout_constraintBottom_toBottomOf="@+id/answerEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/answerEditText"
-        app:layout_constraintTop_toTopOf="@+id/answerEditText" />
+        <Button
+            android:id="@+id/soloGameSubmit"
+            android:layout_width="40dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:drawable/ic_menu_send"
+            android:backgroundTint="#048AF4"
+            app:layout_constraintBottom_toBottomOf="@+id/answerEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/answerEditText"
+            app:layout_constraintTop_toTopOf="@+id/answerEditText" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
