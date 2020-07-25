@@ -28,11 +28,8 @@
         android:label="fragment_game_result"
         tools:layout="@layout/fragment_game_result">
         <argument
-            android:name="questionThemeValue"
-            app:argType="string" />
-        <argument
-            android:name="answerValue"
-            app:argType="string" />
+            android:name="answerForm"
+            app:argType="sample.android.example.wordbattle.data.model.AnswerForm" />
         <action
             android:id="@+id/action_fragmentGameResult_to_fragment_home"
             app:destination="@id/fragment_home" />

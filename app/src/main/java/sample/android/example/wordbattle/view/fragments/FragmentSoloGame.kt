@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_solo_game.*
 import sample.android.example.wordbattle.contract.TrendGetContract
 import sample.android.example.wordbattle.data.viewmodel.TrendViewModel
 import sample.android.example.wordbattle.R
+import sample.android.example.wordbattle.data.model.AnswerForm
 import sample.android.example.wordbattle.data.model.Trend
 import sample.android.example.wordbattle.databinding.FragmentSoloGameBinding
 import sample.android.example.wordbattle.presenter.TrendGetPresenter
@@ -22,12 +22,10 @@ import sample.android.example.wordbattle.presenter.TrendGetPresenter
 class FragmentSoloGame : Fragment(), TrendGetContract.TrendGetView {
 
     private lateinit var binding: FragmentSoloGameBinding
-    private var parent: ViewGroup? = null
 
-    private var questionThemeValue = ""
-    var answerValue = "";
-    var countDown = createCountDownTimer()
-    val viewModel: TrendViewModel by viewModels()
+    private val answerForm = AnswerForm("", "")
+    private var countDown = createCountDownTimer()
+    private val viewModel: TrendViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,11 +48,10 @@ class FragmentSoloGame : Fragment(), TrendGetContract.TrendGetView {
 
         soloGameSubmit.setOnClickListener {
             countDown.cancel()
-            answerValue = answerEditText.text.toString()
+            answerForm.answerValue = answerEditText.text.toString()
             val action =
                 FragmentSoloGameDirections.actionFragmentSoloGameToFragmentGameResult(
-                    questionThemeValue,
-                    answerValue
+                    answerForm
                 )
             findNavController().navigate(action)
         }
@@ -65,10 +62,9 @@ class FragmentSoloGame : Fragment(), TrendGetContract.TrendGetView {
         countDown.cancel()
     }
 
-
     override fun drawTrendView(trend: Trend) {
-        questionThemeValue = trend.title
-        binding.trendViewModel?.trendKeyword?.postValue(questionThemeValue)
+        answerForm.questionThemeValue = trend.title
+        binding.trendViewModel?.trendKeyword?.postValue(answerForm.questionThemeValue)
         countDown.start()
     }
 
@@ -81,13 +77,10 @@ class FragmentSoloGame : Fragment(), TrendGetContract.TrendGetView {
             override fun onFinish() {
                 val action =
                     FragmentSoloGameDirections.actionFragmentSoloGameToFragmentGameResult(
-                        "",
-                        ""
+                        answerForm
                     )
                 findNavController().navigate(action)
             }
         }
     }
-
-
 }

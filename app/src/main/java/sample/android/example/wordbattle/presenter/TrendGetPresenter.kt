@@ -14,8 +14,6 @@ import sample.android.example.wordbattle.view.fragments.FragmentSoloGame
 
 class TrendGetPresenter(val fragmentSoloGame: FragmentSoloGame): TrendGetContract.TrendGetPresenter {
 
-    private lateinit var getView: FragmentSoloGame
-
     override fun getTrend(): Trend {
 
         val trend = Trend("")
